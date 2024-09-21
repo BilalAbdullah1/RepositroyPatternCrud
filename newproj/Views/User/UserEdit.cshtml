@@ -1,0 +1,77 @@
+﻿@model newproj.Models.Users
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h4 class="text-center mb-4 user-details-title" style="color: #007bff; font-size: 1.8rem;">Edit User</h4>
+
+                <div class="card shadow-sm user-details-card" style="border: 1px solid #007bff;">
+                    <div class="card-body">
+                        <form asp-action="UserEdit" enctype="multipart/form-data">
+                            <input type="hidden" asp-for="userId" />
+
+                            <div class="form-group mb-3">
+                                <label asp-for="FullName" class="user-details-label" style="font-weight: bold; font-size: 1.1rem;">Username</label>
+                                <input type="text" class="form-control" asp-for="FullName" placeholder="Enter Username" style="font-size: 1rem;">
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Email" class="user-details-label" style="font-weight: bold; font-size: 1.1rem;">Email</label>
+                                <input type="email" class="form-control" asp-for="Email" placeholder="Enter Email" style="font-size: 1rem;">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Address" class="user-details-label" style="font-weight: bold; font-size: 1.1rem;">Address</label>
+                                <input type="text" class="form-control" asp-for="Address" placeholder="Enter Address" style="font-size: 1rem;">
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Password" class="user-details-label" style="font-weight: bold; font-size: 1.1rem;">Password</label>
+                                <input type="text" class="form-control" asp-for="Password" placeholder="Enter New Password (leave blank to keep current)" style="font-size: 1rem;">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="DOB" class="user-details-label" style="font-weight: bold; font-size: 1.1rem;">Date Of Birth</label>
+                                <input type="date" class="form-control" asp-for="DOB" style="font-size: 1rem;">
+                                <span asp-validation-for="DOB" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="ProfilePicture" class="user-details-label" style="font-weight: bold; font-size: 1.1rem;">Profile Picture</label>
+                                <br />
+                                <br />
+                                <input type="file" name="image" class="form-control-file">
+                                <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Gender" class="user-details-label" style="font-weight: bold; font-size: 1.1rem;">Gender</label>
+                                <select asp-for="Gender" class="form-control" style="font-size: 1rem;">
+                                    <option value="">Select Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary" style="font-size: 1rem; padding: 10px 20px;">Submit</button>
+                                <a class="btn btn-light" asp-action="GetUsersList" style="font-size: 1rem; padding: 10px 20px;">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+}

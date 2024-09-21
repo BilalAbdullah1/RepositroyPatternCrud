@@ -1,0 +1,51 @@
+﻿@model newproj.Models.Users
+@{
+     ViewData["Title"] = "User Details";
+}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <h2 class="text-center mb-4 user-details-title">User Details</h2>
+
+            <div class="card shadow-sm user-details-card">
+                <div class="card-body">
+                    <div class="text-center mb-3">
+                        <img src="~/@Url.Content(Model.ProfilePicture)" class="img-fluid rounded-circle profile-img" />
+                    </div>
+
+                    <div class="mb-3">
+                        <h5 class="user-details-label">User ID:</h5>
+                        <p class="user-details-value">@Model.userId</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5 class="user-details-label">Full Name:</h5>
+                        <p class="user-details-value">@Model.FullName</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5 class="user-details-label">Email:</h5>
+                        <p class="user-details-value">@Model.Email</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5 class="user-details-label">Address:</h5>
+                        <p class="user-details-value">@Model.Address</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5 class="user-details-label">Date of Birth:</h5>
+                        <p class="user-details-value">@Model.DOB.ToShortDateString()</p>
+                    </div>
+                    <div class="mb-3">
+                        <h5 class="user-details-label">Gender:</h5>
+                        <p class="user-details-value">@Model.Gender</p>
+                    </div>
+
+                    <div class="text-center">
+                        <a class="btn back-button" asp-controller="User" asp-action="GetUsersList">Back to List</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

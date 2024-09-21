@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "griddata";
+    Layout = "~/Views/Shared/_DevExtremeLayout.cshtml";
+}
+@(Html.DevExtreme().DataGrid<newproj.Models.Users>()
+    .DataSource(ds => ds.Mvc()
+        .Controller("Usersgriddata")
+        .LoadAction("Get")
+        .Key("userId")
+    )
+    .RemoteOperations(true) 
+    .Columns(columns =>
+    {
+        columns.AddFor(m => m.FullName);
+        columns.AddFor(m => m.Email);
+        columns.AddFor(m => m.Address);
+        columns.AddFor(m => m.Password);
+        columns.AddFor(m => m.DOB);
+        columns.AddFor(m => m.Gender);
+    })
+    .Paging(paging => paging
+        .PageSize(10) 
+    )
+    .Pager(pager => pager
+        .ShowPageSizeSelector(true) 
+        .AllowedPageSizes(new[] { 5, 10, 20 }) 
+        .ShowNavigationButtons(true) 
+        .InfoText("Page {0} of {1} ({2} items)") 
+    )
+)

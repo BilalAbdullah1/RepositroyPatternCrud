@@ -1,0 +1,71 @@
+﻿@model newproj.Models.Users
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <h4 class="text-center mb-4 user-details-title">Add User</h4>
+
+                <div class="card shadow-sm user-details-card">
+                    <div class="card-body">
+                        <form asp-action="UserCreate" enctype="multipart/form-data">
+                            <div class="form-group mb-3">
+                                <label asp-for="FullName" class="user-details-label">Username</label>
+                                <input type="text" class="form-control" asp-for="FullName" placeholder="Enter Username">
+                                <span asp-validation-for="FullName" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Email" class="user-details-label">Email</label>
+                                <input type="email" class="form-control" asp-for="Email" placeholder="Enter Email">
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Address" class="user-details-label">Address</label>
+                                <input type="text" class="form-control" asp-for="Address" placeholder="Enter Address">
+                                <span asp-validation-for="Address" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Password" class="user-details-label">Password</label>
+                                <input type="text" class="form-control" asp-for="Password" placeholder="Enter Password">
+                                <span asp-validation-for="Password" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="DOB" class="user-details-label">Date Of Birth</label>
+                                <input type="date" class="form-control" asp-for="DOB">
+                                <span asp-validation-for="DOB" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="ProfilePicture" class="user-details-label">Profile Picture</label>
+                                <input type="file" name="image" class="form-control-file" />
+                                <span asp-validation-for="ProfilePicture" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group mb-3">
+                                <label asp-for="Gender" class="user-details-label">Gender</label>
+                                <select asp-for="Gender" class="form-control">
+                                    <option value="">Select Gender</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                                <span asp-validation-for="Gender" class="text-danger"></span>
+                            </div>
+
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <a class="btn btn-light" asp-action="GetUsersList">Cancel</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
